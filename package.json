@@ -1,6 +1,6 @@
 {
   "name": "mtok-verify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The on-chain verify core for mtok.market sellers: decode + verify a MtokDripLedger DrawPaid receipt (and its USDC transfer legs) against a paid draw, with the canonical DrawPaid topic set. Dependency-free, runs anywhere fetch runs (node, a CF Worker). The SSOT the platform + reference relay + house seller all share.",
   "type": "module",
   "exports": {
