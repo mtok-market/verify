@@ -25,6 +25,17 @@ const paid = await verifier.verifyDrawPaid(drawPaidTxHash, {
 if (!paid.ok) refuse(paid.reason); // else serve, bounded by paid.event
 ```
 
+Seller hosts can use the same historical fee policy as the market and reference relay:
+
+```js
+import { normalizeFeeSchedule, paymentFeeBpsAt } from 'mtok-verify/fee-policy';
+
+const feeBps = paymentFeeBpsAt(normalizeFeeSchedule(config.feeSchedule), paid.paidAtMs);
+```
+
+Refresh the public config before new claims. Keep completed and pending claims replayable
+without applying a new fee policy. `paidAtMs` must come from the verifier, never the request.
+
 
 ---
 
